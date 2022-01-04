@@ -1,0 +1,386 @@
+@use '../util' as *;
+
+.header {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+
+    &__title {
+        color: var(--white);
+        font-size: rem(30);
+        margin-bottom: rem(20);
+    }
+
+    &__text {
+        color: var(--white);
+        font-size: rem(18);
+    }
+}
+
+.content {
+    width: 100%;
+
+    &__subscription {
+        background-color: var(--blue);
+        height: rem(85);
+        border-radius: rem(10);
+        margin-bottom: rem(20);
+        box-shadow: rem(3) rem(5) 0 0 var(--shadow);
+    }
+
+    &__text {
+        color: var(--white);
+        font-weight: bold;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cost {
+        font-weight: normal;
+    }
+
+    &__form {
+        background-color: var(--white);
+        height: auto;
+        padding-bottom: rem(2);
+        padding-top: rem(1);
+        border-radius: rem(10);
+        box-shadow: rem(3) rem(5) 0 0 var(--shadow);
+    }
+
+    input {
+        padding: rem(10) rem(15);
+        margin-bottom: rem(10);
+        border-radius: rem(5);
+    }
+
+    input::placeholder {
+        font-weight: bold;
+    }
+
+    button {
+        color: var(--white);
+        background-color: var(--green);
+        padding: rem(15) rem(30);
+        text-transform: uppercase;
+        border: rem(1) solid var(--green);
+        box-shadow: 0 rem(2) 0 0 hsl(154, 54%, 46%);
+        border-radius: rem(6);
+
+        @include breakpoint-down(xxxsmall) {
+            padding: rem(15) rem(20);
+        }
+    }
+
+    button:hover {
+        background-color: hsl(154, 54%, 46%);
+        transition: ease-in-out 300ms;
+        cursor: pointer;
+    }
+
+    &__ts {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: rem(5);
+        color: var(--grayisBlue);
+        font-weight: bold;
+        font-size: rem(10);
+    }
+
+    .ts {
+        color: var(--red);
+    }
+}
+
+.formc {
+    display: flex;
+    flex-direction: column;
+    margin: rem(20) rem(10) rem(20);
+}
+
+.formc i {
+    visibility: hidden;
+    position: absolute;
+    right: rem(60);
+    margin-top: rem(15);
+}
+
+.formc small {
+    visibility: hidden;
+    position: absolute;
+    right: rem(60);
+    margin-top: rem(53);
+}
+
+.formc.success input {
+    border: solid rem(2) var(--green);
+};
+
+.formc.success i.fa-check-circle {
+    visibility: visible;
+    color: var(--green)
+};
+
+.formc.error input {
+    border: solid rem(2) var(--red);
+};
+
+.formc.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: var(--red)
+};
+
+.formc.error small {
+    visibility: visible;
+    color: var(--red);
+    font-size: rem(12);
+    font-weight: bold;
+    letter-spacing: rem(.5);
+    font-family: var(--font-body);
+}
+
+@include breakpoint(medium) {
+    .header { 
+        &__title {
+            color: var(--white);
+            font-size: rem(45);
+            margin-bottom: rem(25);
+        }
+    
+        &__text {
+            color: var(--white);
+            font-size: rem(24);
+        }
+    }
+
+    .content {
+        width: 70%;
+    
+        &__subscription {
+            background-color: var(--blue);
+            height: rem(85);
+            border-radius: rem(10);
+            margin-bottom: rem(20);
+        }
+    
+        &__text {
+            color: var(--white);
+            font-weight: bold;
+            font-size: rem(19);
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .cost {
+            font-weight: normal;
+            margin-left: rem(6);
+        }
+    
+        &__form {
+            background-color: var(--white);
+            height: auto;
+            border-radius: rem(10);
+            padding-bottom: rem(3);
+    
+        }
+    
+        .form {
+            display: flex;
+            flex-direction: column;
+            margin: rem(20) rem(10) rem(0);
+        }
+    
+        input {
+            padding: rem(20) rem(15);
+        }
+    
+        input::placeholder {
+            font-weight: bold;
+            font-size: rem(18);
+        }
+    
+        button {
+            color: var(--white);
+            background-color: var(--green);
+            padding: rem(24) rem(30);
+            text-transform: uppercase;
+            border: rem(1) solid var(--green);
+            box-shadow: 0 2px 0 0 hsl(154, 54%, 46%);
+            border-radius: rem(6);
+    
+            @include breakpoint-down(xxxsmall) {
+                padding: rem(15) rem(20);
+            }
+        }
+    
+        button:hover {
+            background-color: hsl(154, 54%, 46%);
+            transition: ease-in-out 300ms;
+            cursor: pointer;
+        }
+    
+        &__ts {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-top: rem(5);
+            color: var(--grayisBlue);
+            font-weight: bold;
+            font-size: rem(14);
+        }
+    
+        .ts {
+            color: var(--red);
+        }
+    }
+
+
+}
+
+@include breakpoint(large) {
+    .header { 
+        &__title {
+            color: var(--white);
+            font-size: rem(75);
+            margin-bottom: rem(25);
+        }
+    
+        &__text {
+            color: var(--white);
+            font-size: rem(32);
+        }
+    }
+
+    .content {
+        width: 72%;
+    
+        &__subscription {
+            background-color: var(--blue);
+            height: rem(100);
+            border-radius: rem(10);
+            margin-bottom: rem(20);
+        }
+    
+        &__text {
+            color: var(--white);
+            font-weight: bold;
+            font-size: rem(26);
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .cost {
+            font-weight: normal;
+            margin-left: rem(6);
+        }
+    
+        &__form {
+            background-color: var(--white);
+            height: auto;
+            border-radius: rem(10);
+    
+        }
+    
+        .form {
+            display: flex;
+            flex-direction: column;
+            margin: rem(30) rem(20) rem(0);
+        }
+    
+        input {
+            padding: rem(22) rem(20);
+        }
+    
+        input::placeholder {
+            font-weight: bold;
+            font-size: rem(24);
+        }
+    
+        button {
+            color: var(--white);
+            font-size: rem(24);
+            background-color: var(--green);
+            padding: rem(24) rem(30);
+            text-transform: uppercase;
+            border: rem(1) solid var(--green);
+            box-shadow: 0 2px 0 0 hsl(154, 54%, 46%);
+            border-radius: rem(6);
+    
+            @include breakpoint-down(xxxsmall) {
+                padding: rem(15) rem(20);
+            }
+        }
+    
+        button:hover {
+            background-color: hsl(154, 54%, 46%);
+            transition: ease-in-out 300ms;
+            cursor: pointer;
+        }
+    
+        &__ts {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-top: rem(5);
+            color: var(--grayisBlue);
+            font-weight: bold;
+            font-size: rem(14);
+        }
+    
+        .ts {
+            color: var(--red);
+        }
+    }
+}
+
+@include breakpoint(xlarge) {
+    .header { 
+        &__title {
+            color: var(--white);
+            font-size: rem(70);
+            margin-bottom: rem(25);
+        }
+    
+        &__text {
+            color: var(--white);
+            font-size: rem(30);
+        }
+    }
+
+    .content {
+        justify-self: center;
+
+        &__subscription {
+            background-color: var(--blue);
+            height: rem(110);
+            border-radius: rem(10);
+            margin-bottom: rem(20);
+        }
+    
+        &__text {
+            color: var(--white);
+            font-weight: bold;
+            font-size: rem(20);
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            color: var(--white);
+            font-size: rem(22);
+        }
+    }
+}

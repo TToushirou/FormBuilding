@@ -1,0 +1,43 @@
+@use '../util' as *;
+
+html {
+	font-size: 100%;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: rem(30);
+	height: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+#body {
+	background-size: cover;
+	background-position: bottom center;
+	background-image: url(/images/bg-intro-mobile.png);
+	background-color: var(--red);
+
+	@include breakpoint(large) {
+		background-position: center center;
+		background-image: url(/images/bg-intro-desktop.png);
+		background-repeat: no-repeat;
+	}
+
+	@include breakpoint(xlarge) {
+		background-repeat: repeat;
+		display: grid;
+		height: 100vh;
+		grid-template-columns: 1fr 1fr;
+	}
+}
