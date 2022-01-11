@@ -4,6 +4,7 @@ const lastname = document.getElementById('lastname');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const submit = document.getElementById('button');
+const clearForm = document.getElementById('formc success')
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
@@ -35,7 +36,6 @@ function checkInputs(){
 		setErrorFor(email, 'Not a valid email');
 	} else {
 		setSuccessFor(email);
-		
 	}
 	
 	if(passwordValue === '') {
@@ -45,8 +45,8 @@ function checkInputs(){
 	} else {
 		setSuccessFor(password);
 	}
+	
 };
-
 
 function setErrorFor(input, message) {
 	const formc = input.parentElement;
@@ -59,6 +59,8 @@ function setSuccessFor(input) {
 	const formc = input.parentElement;
 	formc.className = 'formc success';
 };
+
+
 
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);

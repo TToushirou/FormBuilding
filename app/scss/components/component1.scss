@@ -125,6 +125,10 @@
     color: var(--green)
 };
 
+.formc.success button {
+    visibility: visible;
+}
+
 .formc.error input {
     border: solid rem(2) var(--red);
 };
@@ -142,7 +146,6 @@
     letter-spacing: rem(.5);
     font-family: var(--font-body);
 }
-
 
 
 @include breakpoint(medium) {
@@ -241,6 +244,20 @@
         .ts {
             color: var(--red);
         }
+    }
+
+    .formc small {
+        visibility: hidden;
+        position: absolute;
+        right: rem(175);
+        margin-top: rem(80);
+    }
+
+    .formc i {
+        visibility: hidden;
+        position: absolute;
+        right: rem(175);
+        margin-top: rem(25);
     }
 
 
@@ -343,6 +360,20 @@
             color: var(--red);
         }
     }
+
+    .formc small {
+        visibility: hidden;
+        position: absolute;
+        right: rem(220);
+        margin-top: rem(80);
+    }
+
+    .formc i {
+        visibility: hidden;
+        position: absolute;
+        right: rem(220);
+        margin-top: rem(25);
+    }
 }
 
 @include breakpoint(xlarge) {
@@ -385,4 +416,28 @@
             font-size: rem(22);
         }
     }
+
+    .formc small {
+        visibility: hidden;
+        position: absolute;
+        right: rem(220);
+        margin-top: rem(80);
+    }
+
+    .formc i {
+        visibility: hidden;
+        position: absolute;
+        right: rem(220);
+        margin-top: rem(25);
+    }
+
+    .formc.error small {
+        visibility: visible;
+        color: var(--red);
+        font-size: rem(14);
+        font-weight: bold;
+        letter-spacing: rem(.5);
+        font-family: var(--font-body);
+    }
+
 }
